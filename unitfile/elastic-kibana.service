@@ -1,0 +1,10 @@
+[Unit]
+Description=reconfigure elasticsearch and kibana
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/root/init/fix-elastic/fix-elastic.sh
+
+[Install]
+WantedBy=default.target

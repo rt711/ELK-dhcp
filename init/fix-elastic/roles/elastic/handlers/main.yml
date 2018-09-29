@@ -1,0 +1,7 @@
+---
+# handlers file for fix-elastic
+#
+- name: restart elasticsearch 
+  service:
+    name: elasticsearch
+    state: started

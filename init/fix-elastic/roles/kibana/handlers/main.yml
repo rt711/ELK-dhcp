@@ -1,0 +1,7 @@
+---
+# handlers file for fix-elastic
+#
+- name: restart kibana 
+  service:
+    name: kibana
+    state: started

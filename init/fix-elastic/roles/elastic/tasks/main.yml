@@ -1,0 +1,13 @@
+---
+# tasks file for fix-elastic
+#
+
+- name: Template Elasticsearch YML
+  template:
+    src: templates/elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+    owner: root
+    group: elasticsearch
+    mode: "0660"
+  notify: "restart elasticsearch"
+  register: templating_elasticsearch

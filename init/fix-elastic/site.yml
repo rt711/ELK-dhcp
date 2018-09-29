@@ -1,0 +1,8 @@
+---
+
+- name: Fix elasticsearch
+  roles:
+    - elastic
+    - kibana
+  hosts:
+    localhost

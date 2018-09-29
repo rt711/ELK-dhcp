@@ -1,0 +1,21 @@
+---
+# tasks file for fix-elastic
+#
+
+- name: Create Kibana pidfile
+  file:
+    path: /var/run/kibana.pid
+    state: touch
+    owner: kibana
+    group: kibana
+    mode: "0600"
+
+- name: Template Kibana
+  template:
+    src: templates/kibana.yml.j2
+    dest: /etc/kibana/kibana.yml
+    owner: root
+    group: root
+    mode: "0644"
+  notify: "restart kibana"
+  register: templating_kibana
